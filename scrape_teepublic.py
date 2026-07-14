@@ -109,9 +109,9 @@ def parse_products(html: str):
 
 def main():
     print(f"Scarico la pagina dello store: {STORE_URL}")
-    print(f"Lunghezza totale HTML scaricato: {len(html)} caratteri")
     try:
         html = fetch_html(STORE_URL)
+        print(f"Lunghezza totale HTML scaricato: {len(html)} caratteri")
     except Exception as exc:
         print(f"Errore nello scaricare la pagina: {exc}", file=sys.stderr)
         sys.exit(1)
