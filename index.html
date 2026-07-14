@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vintage Style Lovers — Garage Collection</title>
+<meta name="description" content="Magliette con grafiche auto d'epoca e JDM. Nuove uscite ogni settimana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --asphalt: #15171b;
+    --asphalt-2: #1d2025;
+    --concrete: #e9eae4;
+    --steel: #8b9099;
+    --amber: #f4b41a;
+    --taillight: #d1382b;
+    --line: rgba(233,234,228,0.09);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--asphalt);
+    color:var(--concrete);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* subtle asphalt texture */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.025) 0, transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(255,255,255,0.02) 0, transparent 45%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Teko', sans-serif;
+    font-weight:600;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+    line-height:0.95;
+  }
+
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 5vw;
+    background:rgba(21,23,27,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Teko',sans-serif; font-size:26px; font-weight:700;
+    letter-spacing:0.03em;
+  }
+  .brand .dot{ width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 10px var(--amber); }
+  header nav a{
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--steel); margin-left:28px; transition:color .2s;
+  }
+  header nav a:hover{ color:var(--amber); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:14vh 5vw 8vh;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px; letter-spacing:0.25em; text-transform:uppercase;
+    color:var(--amber); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{ content:""; width:26px; height:1px; background:var(--amber); }
+  .hero h1{
+    font-size: clamp(58px, 11vw, 148px);
+    color:var(--concrete);
+  }
+  .hero h1 span{ color:var(--amber); }
+  .hero p{
+    max-width:520px;
+    margin-top:22px;
+    color:var(--steel);
+    font-size:16px;
+    line-height:1.6;
+  }
+  .hero-cta{
+    display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:0.06em; text-transform:uppercase;
+    border-radius:2px;
+    transition: all .2s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{ background:var(--amber); color:var(--asphalt); font-weight:600; }
+  .btn-primary:hover{ background:#ffcb4d; transform:translateY(-1px); }
+  .btn-ghost{ border-color:var(--line); color:var(--concrete); }
+  .btn-ghost:hover{ border-color:var(--steel); }
+
+  /* rev counter strip */
+  .stripline{
+    display:flex; margin-top:70px; border-top:1px solid var(--line);
+  }
+  .stripline div{
+    flex:1; padding:16px 0 0; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--steel);
+    border-right:1px solid var(--line);
+  }
+  .stripline div:last-child{ border-right:none; }
+  .stripline strong{ display:block; color:var(--concrete); font-size:20px; margin-bottom:4px; font-weight:500; }
+
+  /* ---------- Catalog ---------- */
+  .catalog{ padding:9vh 5vw; position:relative; z-index:1; }
+  .catalog-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:44px; gap:20px; flex-wrap:wrap;
+  }
+  .catalog-head h2{ font-size:clamp(36px,5vw,58px); }
+  .catalog-head p{ color:var(--steel); font-size:13px; max-width:340px; font-family:'IBM Plex Mono',monospace; }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(270px,1fr));
+    gap:22px;
+  }
+
+  .card{
+    background:var(--asphalt-2);
+    border:1px solid var(--line);
+    border-radius:3px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .card:hover{ border-color:rgba(244,180,26,0.4); transform:translateY(-3px); }
+
+  .card-media{
+    position:relative;
+    aspect-ratio:1/1;
+    background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .card-media img{
+    width:88%; height:88%; object-fit:contain;
+    transition: transform .35s ease;
+  }
+  .card:hover .card-media img{ transform:scale(1.06); }
+
+  .card-price{
+    position:absolute; top:10px; right:10px;
+    background:var(--taillight); color:#fff;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600;
+    padding:4px 9px; border-radius:2px;
+  }
+
+  .card-body{ padding:16px 16px 18px; display:flex; flex-direction:column; gap:10px; flex:1; }
+
+  /* license-plate style tag — signature element */
+  .plate{
+    align-self:flex-start;
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--concrete); color:var(--asphalt);
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:13px;
+    letter-spacing:0.06em;
+    padding:5px 10px 5px 8px;
+    border-radius:2px;
+    border:1.5px solid var(--asphalt);
+    box-shadow: inset 0 0 0 1px rgba(21,23,27,0.15);
+  }
+  .plate::before{
+    content:"";
+    width:5px; height:5px; border-radius:50%;
+    background:var(--asphalt); opacity:0.35;
+  }
+
+  .card-title{ font-size:17px; font-weight:500; color:var(--concrete); }
+  .card-desc{ font-size:13px; color:var(--steel); line-height:1.5; flex:1; }
+
+  .card-link{
+    margin-top:6px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--amber); display:flex; align-items:center; gap:6px;
+  }
+  .card-link::after{ content:"→"; transition:transform .2s; }
+  .card:hover .card-link::after{ transform:translateX(4px); }
+
+  .empty-state{
+    grid-column:1/-1; text-align:center; padding:80px 20px; color:var(--steel);
+    font-family:'IBM Plex Mono',monospace; font-size:13px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    padding:60px 5vw 40px;
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:30px;
+  }
+  footer .brand{ margin-bottom:10px; }
+  footer p{ color:var(--steel); font-size:13px; max-width:340px; line-height:1.6; }
+  footer .cols{ display:flex; gap:60px; flex-wrap:wrap; }
+  footer .cols div h4{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.15em;
+    color:var(--steel); text-transform:uppercase; margin-bottom:14px;
+  }
+  footer .cols a{ display:block; font-size:14px; color:var(--concrete); margin-bottom:10px; }
+  footer .cols a:hover{ color:var(--amber); }
+  .updated{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--steel);
+    margin-top:30px; width:100%; border-top:1px solid var(--line); padding-top:18px;
+  }
+
+  @media (max-width:640px){
+    .stripline{ flex-wrap:wrap; }
+    .stripline div{ flex:1 1 50%; border-right:none; border-bottom:1px solid var(--line); padding-bottom:14px; margin-bottom:14px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+
+  :focus-visible{ outline:2px solid var(--amber); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand"><span class="dot"></span>VINTAGE&nbsp;STYLE&nbsp;LOVERS</div>
+  <nav>
+    <a href="#catalog">Catalogo</a>
+    <a href="https://www.tiktok.com/@vintagestylelovers" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers" target="_blank" rel="noopener">Store TeePublic</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Grafiche auto · edizioni limitate</div>
+  <h1>Vestiti come<br>guidi <span>forte.</span></h1>
+  <p>Magliette disegnate a mano per chi ama JDM, rally d'epoca e supercar italiane. Ogni design nasce da una macchina vera, stampato su richiesta e spedito da TeePublic in tutto il mondo.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#catalog">Vedi il catalogo</a>
+    <a class="btn btn-ghost" href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers" target="_blank" rel="noopener">Vai allo store TeePublic</a>
+  </div>
+  <div class="stripline">
+    <div><strong id="stat-count">—</strong>Design pubblicati</div>
+    <div><strong>100%</strong>Print on demand</div>
+    <div><strong>Auto</strong>Tema esclusivo</div>
+  </div>
+</section>
+
+<section class="catalog" id="catalog">
+  <div class="catalog-head">
+    <h2>Il garage</h2>
+    <p>// CATALOGO AGGIORNATO IN AUTOMATICO OGNI GIORNO DAL TUO STORE TEEPUBLIC</p>
+  </div>
+  <div class="grid" id="grid">
+    <div class="empty-state">Carico il catalogo…</div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="brand"><span class="dot"></span>VINTAGE&nbsp;STYLE&nbsp;LOVERS</div>
+    <p>Un progetto nato su TikTok, ora anche su strada. Nuovi disegni ogni settimana.</p>
+  </div>
+  <div class="cols">
+    <div>
+      <h4>Segui</h4>
+      <a href="https://www.tiktok.com/@vintagestylelovers" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers" target="_blank" rel="noopener">TeePublic</a>
+    </div>
+    <div>
+      <h4>Store</h4>
+      <a href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers?sort=newest" target="_blank" rel="noopener">Novità</a>
+      <a href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers?sort=popular" target="_blank" rel="noopener">Più popolari</a>
+    </div>
+  </div>
+  <div class="updated" id="updated-line">// SINCRONIZZAZIONE IN CORSO</div>
+</footer>
+
+<script>
+async function loadCatalog(){
+  const grid = document.getElementById('grid');
+  const countEl = document.getElementById('stat-count');
+  const updatedEl = document.getElementById('updated-line');
+  try{
+    const res = await fetch('products.json', { cache: 'no-store' });
+    const data = await res.json();
+    const products = data.products || [];
+
+    countEl.textContent = products.length;
+
+    if(products.length === 0){
+      grid.innerHTML = '<div class="empty-state">Nessun design trovato al momento.</div>';
+    } else {
+      grid.innerHTML = products.map(p => `
+        <a class="card" href="${p.url}" target="_blank" rel="noopener">
+          <div class="card-media">
+            <img src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy">
+            ${p.price ? `<div class="card-price">$${escapeHtml(p.price)}</div>` : ''}
+          </div>
+          <div class="card-body">
+            ${p.tag ? `<span class="plate">${escapeHtml(p.tag)}</span>` : ''}
+            <div class="card-title">${escapeHtml(p.title)}</div>
+            <div class="card-desc">${escapeHtml(p.description || '')}</div>
+            <div class="card-link">Guarda su TeePublic</div>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    if(data.updated_at){
+      const d = new Date(data.updated_at);
+      updatedEl.textContent = '// CATALOGO AGGIORNATO IL ' + d.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' }) + ' ALLE ' + d.toLocaleTimeString('it-IT', {hour:'2-digit', minute:'2-digit'});
+    }
+  } catch(err){
+    grid.innerHTML = '<div class="empty-state">Impossibile caricare il catalogo in questo momento.</div>';
+    updatedEl.textContent = '// ERRORE DI SINCRONIZZAZIONE';
+    console.error(err);
+  }
+}
+
+function escapeHtml(str){
+  return String(str)
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;');
+}
+
+loadCatalog();
+</script>
+
+</body>
+</html>
