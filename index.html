@@ -246,7 +246,7 @@
 <header>
   <div class="brand"><span class="dot"></span>VINTAGE&nbsp;STYLE&nbsp;LOVERS</div>
   <nav>
-    <a href="#catalog">Catalogo</a>
+    <a href="#catalog">Catalog</a>
     <a href="https://www.tiktok.com/@vintagestylelovers" target="_blank" rel="noopener">TikTok</a>
     <a href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers" target="_blank" rel="noopener">Store TeePublic</a>
   </nav>
@@ -257,13 +257,13 @@
   <h1> Style <br> with the <span> legends of the streets.</span></h1>
   <p> Self made t-shirts. Each design is taken from a real life car and with the print on demand system each t-shirt is made and delivered by TeePublic worldwide.</p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="#catalog">Vedi il catalogo</a>
+    <a class="btn btn-primary" href="#catalog"> See the catalog </a>
     <a class="btn btn-ghost" href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers" target="_blank" rel="noopener">Vai allo store TeePublic</a>
   </div>
   <div class="stripline">
-    <div><strong id="stat-count">—</strong>Design pubblicati</div>
-    <div><strong>100%</strong>Print on demand</div>
-    <div><strong>Auto</strong>Tema esclusivo</div>
+    <div><strong id="stat-count">—</strong> Published designs </div>
+    <div><strong> 100% </strong> Cars love </div>
+    <div><strong> Real Authentic </strong> Style </div>
   </div>
 </section>
 
@@ -273,7 +273,7 @@
     <p>//</p>
   </div>
   <div class="grid" id="grid">
-    <div class="empty-state"> Carico il catalogo… </div>
+    <div class="empty-state"> Loading the catalog… </div>
   </div>
 </section>
 
@@ -330,11 +330,11 @@ async function loadCatalog(){
 
     if(data.updated_at){
       const d = new Date(data.updated_at);
-      updatedEl.textContent = '// CATALOGO AGGIORNATO IL ' + d.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' }) + ' ALLE ' + d.toLocaleTimeString('it-IT', {hour:'2-digit', minute:'2-digit'});
+      updatedEl.textContent = '// CATALOG UPDATED ' + d.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' }) + ' ALLE ' + d.toLocaleTimeString('it-IT', {hour:'2-digit', minute:'2-digit'});
     }
   } catch(err){
-    grid.innerHTML = '<div class="empty-state">Impossibile caricare il catalogo in questo momento.</div>';
-    updatedEl.textContent = '// ERRORE DI SINCRONIZZAZIONE';
+    grid.innerHTML = '<div class="empty-state"> Catalog not available now.</div>';
+    updatedEl.textContent = '// Error';
     console.error(err);
   }
 }
