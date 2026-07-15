@@ -284,7 +284,7 @@
   </div>
   <div class="cols">
     <div>
-      <h4>Segui</h4>
+      <h4>Follow</h4>
       <a href="https://www.tiktok.com/@vintagestylelovers" target="_blank" rel="noopener">TikTok</a>
       <a href="https://www.teepublic.com/user/https-www-tiktok-com-vintagestylelovers" target="_blank" rel="noopener">TeePublic</a>
     </div>
@@ -310,7 +310,7 @@ async function loadCatalog(){
     countEl.textContent = products.length;
 
     if(products.length === 0){
-      grid.innerHTML = '<div class="empty-state">Nessun design trovato al momento.</div>';
+      grid.innerHTML = '<div class="empty-state"> No design found.</div>';
     } else {
       grid.innerHTML = products.map(p => `
         <a class="card" href="${p.url}" target="_blank" rel="noopener">
@@ -322,7 +322,7 @@ async function loadCatalog(){
             ${p.tag ? `<span class="plate">${escapeHtml(p.tag)}</span>` : ''}
             <div class="card-title">${escapeHtml(p.title)}</div>
             <div class="card-desc">${escapeHtml(p.description || '')}</div>
-            <div class="card-link">Guarda su TeePublic</div>
+            <div class="card-link"> Watch on TeePublic</div>
           </div>
         </a>
       `).join('');
@@ -330,7 +330,7 @@ async function loadCatalog(){
 
     if(data.updated_at){
       const d = new Date(data.updated_at);
-      updatedEl.textContent = '// CATALOG UPDATED ' + d.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' }) + ' ALLE ' + d.toLocaleTimeString('it-IT', {hour:'2-digit', minute:'2-digit'});
+      updatedEl.textContent = '// CATALOG UPDATED ' + d.toLocaleDateString('it-IT', { day:'2-digit', month:'2-digit', year:'numeric' }) + ' AT ' + d.toLocaleTimeString('it-IT', {hour:'2-digit', minute:'2-digit'});
     }
   } catch(err){
     grid.innerHTML = '<div class="empty-state"> Catalog not available now.</div>';
