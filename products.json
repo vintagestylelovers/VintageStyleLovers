@@ -142,7 +142,7 @@
       "tag": "PORSCHE",
       "description": "Just doing something legal for once",
       "tags": ["718", "cayman", "porsche 911", "racing", "red car"],
-      "image": "https://images.teepublic.com/derived/production/designs/94153439_0/1781554374/i_p:c_ffffff,s_313,q_90.jpg",
+      "image": "https://images.teepublic.com/derived/production/designs/94153439_0/1781554374/i_m:bi_production_blanks_a59x1cgomgu5lprfjlmi_1462829024,c_35_38_400x,s_630,q_90.jpg",
       "url": "https://www.teepublic.com/t-shirt/94153439-over-the-speed-limit?store_id=4505692",
       "price": "24"
     },
@@ -155,14 +155,6 @@
       "url": "https://www.teepublic.com/t-shirt/94097785-catch-me-if-you-can?store_id=4505692",
       "price": "24"
     },
-    {
-      "title": "Beemer boy",
-      "tag": "CAR BMW GERMAN CARS",
-      "description": "The ultimate design for true Bimmer fans. Perfect for petrolheads who know who rules the streets!",
-      "tags": ["bmw", "car enthusiast", "german cars", "m4", "turbos"],
-      "image": "https://images.teepublic.com/derived/production/designs/93942022_0/1781213699/i_p:c_191919,s_313,q_90.jpg",
-      "url": "https://www.teepublic.com/t-shirt/93942022-beemer-boy?store_id=4505692",
-      "price": "24"
-    }
+   
   ]
 }
