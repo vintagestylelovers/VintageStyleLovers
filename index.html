@@ -54,10 +54,9 @@
 </div>
 
 <script>
-    // Lista aggiornata dei tuoi design
     const products = [
-        { img: "https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg", name: "Nissan Style JDM" },
-        { img: "https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg", name: "Cooler RWB" },
+        { img: "https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 01" },
+        { img: "https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg", name: "Garage Design 02" },
         { img: "https://images.teepublic.com/derived/production/designs/95787958_0/1784020597/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_29_14_425x,bps_ba,s_630,q_90.jpg", name: "Garage Design 03" },
         { img: "https://images.teepublic.com/derived/production/designs/95526543_0/1783602488/i_m:bi_production_blanks_t6kbx5vb9b1g3q6hwaii_1571669487,c_35_19_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 04" },
         { img: "https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 05" },
@@ -72,7 +71,7 @@
     ];
 
     const grid = document.getElementById('productGrid');
-    products.forEach((p, index) => {
+    products.forEach((p) => {
         grid.innerHTML += `
             <div class="card">
                 <img src="${p.img}" alt="${p.name}">
