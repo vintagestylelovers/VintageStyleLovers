@@ -2,36 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vintage Garage Apparel</title>
+    <title>Vintage Garage Apparel | Automotive Heritage</title>
     <style>
-        :root { --oil-black: #0a0a0a; --asphalt: #1a1a1a; --racing-red: #c1121f; --dusty-white: #e0e0e0; --aged-gold: #c89f50; }
-        body { background-color: var(--oil-black); color: var(--dusty-white); font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; }
-        header { text-align: center; border-bottom: 3px double var(--racing-red); padding: 40px 0; margin-bottom: 40px; }
-        h1 { font-size: 3rem; color: var(--dusty-white); text-transform: uppercase; letter-spacing: 8px; margin: 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .item { background-color: var(--asphalt); padding: 10px; border: 1px solid #333; text-align: center; }
-        .item img { width: 100%; height: 200px; object-fit: cover; filter: sepia(30%); }
-        .btn-order { display: block; border: 1px solid var(--racing-red); color: var(--racing-red); padding: 8px; margin-top: 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-        .btn-order:hover { background: var(--racing-red); color: white; }
+        :root {
+            --oil-black: #0a0a0a;
+            --asphalt: #1a1a1a;
+            --racing-red: #c1121f;
+            --dusty-white: #e0e0e0;
+            --aged-gold: #c89f50;
+        }
+
+        body {
+            background-color: var(--oil-black);
+            color: var(--dusty-white);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px double var(--racing-red);
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--dusty-white);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: var(--aged-gold);
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .item {
+            background-color: var(--asphalt);
+            padding: 15px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: sepia(30%) contrast(1.1);
+        }
+
+        .item h3 {
+            margin: 15px 0;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        .btn-order {
+            display: block;
+            border: 1px solid var(--racing-red);
+            color: var(--racing-red);
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-order:hover {
+            background: var(--racing-red);
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <header><h1>VINTAGE GARAGE</h1></header>
+
+    <header>
+        <h1>VINTAGE GARAGE</h1>
+        <p class="subtitle">// Authentic Automotive Apparel //</p>
+    </header>
+
     <div class="grid">
-        <!-- Generazione statica dei 30 elementi -->
-        <script>
-            const designs = ["Vintage Engine", "Classic Racer", "Old School Garage", "Retro Speed", "Piston Power", "Turbo Heritage", "Midnight Drive", "Circuit Legend", "Road King", "Steel Soul", "Grand Prix 60s", "Drift Master", "Garage Life", "Muscle Car Club", "Vintage Tire", "Race Track", "Fuel Injection", "Chrome Dreams", "Speed Demon", "Classic Curves", "Rally Master", "Roadster Club", "Vintage Oil", "Engine Block", "Super Sport", "Apex Hunter", "Shift Gear", "Vintage Helmet", "Racing Stripes", "Full Throttle"];
-            
-            designs.forEach((name, i) => {
-                document.write(`
-                    <div class="item">
-                        <img src="https://picsum.photos/300/300?random=${i}" alt="Design">
-                        <h3>${name}</h3>
-                        <a href="https://wa.me/39XXXXXXXXXX?text=I%20want%20to%20order%20${name.replace(' ', '%20')}" class="btn-order">Order Now</a>
-                    </div>
-                `);
-            });
-        </script>
+
+        <!-- Prodotto 1: Nissan Silvia S15 -->
+        <div class="item">
+            <img src="https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg" alt="Nissan style jdm">
+            <h3>Nissan Style JDM</h3>
+            <a href="https://wa.me/39XXXXXXXXXX?text=Hi!%20I%20would%20like%20to%20order%20the%20Nissan%20Style%20JDM%20design." class="btn-order">Order via WhatsApp</a>
+        </div>
+
+        <!-- Prodotto 2: Porsche 964 RWB -->
+        <div class="item">
+            <img src="https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg" alt="Cooler with a lifting">
+            <h3>Cooler with a lifting (RWB)</h3>
+            <a href="https://wa.me/39XXXXXXXXXX?text=Hi!%20I%20would%20like%20to%20order%20the%20Cooler%20with%20a%20lifting%20design." class="btn-order">Order via WhatsApp</a>
+        </div>
+
+        <!-- Continua a mandarmi i prossimi link e li aggiungo qui! -->
+
     </div>
+
 </body>
 </html>
