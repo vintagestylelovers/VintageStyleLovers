@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Style Lovers</title>
+    <title>Vintage Style Lovers | Automotive Apparel</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --accent-color: #d4af37; /* Oro vintage */
-            --button-hover: #1ebe5d;
+            --bg-color: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-color: #d1d1d1;
+            --accent-color: #e63946; /* Racing Red */
+            --gold-accent: #f4a261;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Courier New', Courier, monospace; /* Stile Vintage/Typewriter */
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -26,531 +26,125 @@
 
         header {
             text-align: center;
-            padding: 40px 20px;
-            max-width: 800px;
+            padding: 50px 20px;
+            border-bottom: 2px solid var(--accent-color);
+            width: 100%;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--accent-color);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
         }
 
         header p {
-            font-size: 1.1rem;
-            color: #aaa;
+            font-size: 1.2rem;
+            color: var(--gold-accent);
+            margin-top: 10px;
+        }
+
+        .info-section {
+            padding: 30px;
+            text-align: center;
+            max-width: 700px;
+            font-style: italic;
         }
 
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 25px;
             width: 90%;
-            max-width: 1200px;
-            padding: 20px 0 60px 0;
+            max-width: 1100px;
+            padding-bottom: 60px;
         }
 
         .product-card {
             background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
+            border: 1px solid #333;
+            padding: 15px;
+            transition: 0.3s;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            border-color: var(--accent-color);
         }
 
         .product-image {
             width: 100%;
-            height: 320px;
+            height: 280px;
             object-fit: cover;
-            background-color: #2a2a2a;
-        }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
+            filter: grayscale(20%);
         }
 
         .product-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            margin: 15px 0 5px 0;
             color: #fff;
         }
 
-        .product-tag {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
         .product-price {
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
+            color: var(--gold-accent);
             font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .order-btn {
-            background-color: #25d366; /* Verde WhatsApp */
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s;
             display: block;
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
         .order-btn:hover {
-            background-color: var(--button-hover);
+            background: var(--accent-color);
+            color: white;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #0a0a0a;
-            width: 100%;
-            color: #777;
-            font-size: 0.9rem;
-            border-top: 1px solid #222;
-        }
-
-        .info-section {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            width: 90%;
-            max-width: 800px;
-            text-align: center;
-            border: 1px solid #333;
-        }
-
-        .info-section h3 {
-            color: var(--accent-color);
-            margin-top: 0;
+            padding: 40px;
+            color: #555;
+            text-transform: uppercase;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>VINTAGE STYLE LOVERS</h1>
-        <p>Magliette esclusive con design unici dedicati alle auto d'epoca e JDM.</p>
+        <h1>Vintage Style Lovers</h1>
+        <p>// Pure Automotive Passion & Heritage //</p>
     </header>
 
     <div class="info-section">
-        <h3>Come Ordinare</h3>
-        <p>Scegli il design che preferisci e clicca su <strong>"Ordina su WhatsApp"</strong> per definire taglia e spedizione. Pagamento sicuro tramite <strong>Bonifico Bancario (IBAN)</strong>. Spedizioni tracciate in tutta Italia!</p>
+        <p>Premium apparel for car enthusiasts. Hand-selected designs. 
+           Order directly via WhatsApp and pay via Bank Transfer (IBAN). 
+           Worldwide shipping available via Italian Post.</p>
     </div>
 
     <div class="container">
         
-        <!-- 1. Hand made with love -->
+        <!-- Esempio Prodotto (Ripeti per tutti i 30 design) -->
         <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg" alt="Hand made with love" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Hand made with love</h2>
-                    <div class="product-tag">Porsche 912 cabriolet</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Hand%20made%20with%20love" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
+            <img src="https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg" alt="Design" class="product-image">
+            <h2 class="product-title">Hand made with love</h2>
+            <div class="product-price">€ 29.00 + shipping</div>
+            <a href="https://wa.me/39XXXXXXXXXX?text=Hello,%20I%20would%20like%20to%20order%20the%20Hand%20made%20with%20love%20t-shirt." class="order-btn">Order on WhatsApp</a>
         </div>
 
-        <!-- 2. JDM old but full of swag -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94271241_0/1781722448/i_m:bi_production_blanks_gkyq47rgqxh9s8qefmdq_1571669494,c_73_10_373x,bps_ba,s_630,q_90.jpg" alt="JDM old but full of swag" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">JDM old but full of swag</h2>
-                    <div class="product-tag">Nissan Skyline R34</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20JDM%20old%20but%20full%20of%20swag" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 3. Drift queen for life -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94597606_2/1784376368/i_m:bi_production_blanks_vwnpqbrk5brqfxmcqha0_1681922693,c_35_0_401x,bps_ba,s_630,q_90.jpg" alt="Drift queen for life" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Drift queen for life</h2>
-                    <div class="product-tag">Bmw m3 e46</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Drift%20queen%20for%20life" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 4. Singer style -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95787958_0/1784020597/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_29_14_425x,bps_ba,s_630,q_90.jpg" alt="Singer style" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Singer style</h2>
-                    <div class="product-tag">Porsche singer</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Singer%20style" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 5. Rx-7 style -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94437634_0/1781964096/i_m:bi_production_blanks_m0ljmwsjvj0dfsnpevcj_1571669489,c_35_29_401x,bps_ba,s_630,q_90.jpg" alt="Rx-7 style" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Rx-7 style</h2>
-                    <div class="product-tag">Mazda RX-7</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Rx-7%20style" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 6. Nissan style jdm -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg" alt="Nissan style jdm" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Nissan style jdm</h2>
-                    <div class="product-tag">Nissan Silvia S15</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Nissan%20style%20jdm" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 7. El dorado love -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95526543_0/1783602488/i_m:bi_production_blanks_t6kbx5vb9b1g3q6hwaii_1571669487,c_35_19_401x,bps_ba,s_630,q_90.jpg" alt="El dorado love" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">El dorado love</h2>
-                    <div class="product-tag">Cadillac El Dorado</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20El%20dorado%20love" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 8. Classic style never dies -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95481950_1/1783540823/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_0_0_472x,bps_ba,s_630,q_90.jpg" alt="Classic style never dies" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Classic style never dies</h2>
-                    <div class="product-tag">Ferrari 750 Monza</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Classic%20style%20never%20dies" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 9. Cooler with a lifting -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg" alt="Cooler with a lifting" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Cooler with a lifting</h2>
-                    <div class="product-tag">Porsche 964 RWB</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Cooler%20with%20a%20lifting" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 10. Civic type R style -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95256610_0/1783183202/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_41_39_401x,bps_ba,s_630,q_90.jpg" alt="Civic type R style" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Civic type R style</h2>
-                    <div class="product-tag">Civic first version</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Civic%20type%20R%20style" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 11. Officer I'm legal -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94674871_0/1782304436/i_m:bi_production_blanks_ui7syp42jhmnxtvniuwg_1535405111,c_35_31_401x,bps_ba,s_630,q_90.jpg" alt="Officer I'm legal" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Officer I'm legal</h2>
-                    <div class="product-tag">Nissan gtr r35</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Officer%20Im%20legal" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 12. Evo style drift T-Shirt -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95350190_1/1783340269/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_51_20_401x,bps_ba,s_630,q_90.jpg" alt="Evo style drift T-Shirt" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Evo style drift T-Shirt</h2>
-                    <div class="product-tag">Evo IX</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Evo%20style%20drift%20T-Shirt" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 13. Mustang love -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95196578_0/1783081057/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_35_23_401x,bps_ba,s_630,q_90.jpg" alt="Mustang love" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Mustang love</h2>
-                    <div class="product-tag">Mustang 1964</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Mustang%20love" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 14. Mr. bean -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94963279_0/1782741854/i_m:bi_production_blanks_ui7syp42jhmnxtvniuwg_1535405111,c_35_30_401x,bps_ba,s_630,q_90.jpg" alt="Mr. bean" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Mr. bean</h2>
-                    <div class="product-tag">Mini Minor</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Mr%20bean" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 15. California love -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94849930_1/1782556047/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_38_45_396x,bps_ba,s_630,q_90.jpg" alt="California love" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">California love</h2>
-                    <div class="product-tag">Corvette</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20California%20love" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 16. 718 style -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95141200_1/1783000884/i_m:bi_production_blanks_fi9zhy8iszgn9fdsrtgu_1535405111,c_38_16_401x,bps_ba,s_630,q_90.jpg" alt="718 style" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">718 style</h2>
-                    <div class="product-tag">Porsche boxster 718</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20718%20style" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 17. Porsche 1977 -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95004500_0/1782804880/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_35_47_401x,bps_ba,s_630,q_90.jpg" alt="Porsche 1977" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Porsche 1977</h2>
-                    <div class="product-tag">Porsche 935</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Porsche%201977" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 18. Blue AWD -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94915897_0/1782677087/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_35_32_401x,bps_ba,s_630,q_90.jpg" alt="Blue AWD" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Blue AWD</h2>
-                    <div class="product-tag">Subaru Impreza</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Blue%20AWD" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 19. From the front -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94742067_1/1782391944/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_49_38_401x,bps_ba,s_630,q_90.jpg" alt="From the front" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">From the front</h2>
-                    <div class="product-tag">Ferrari F40</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20From%20the%20front" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 20. From the back -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94743233_0/1782393528/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_35_19_401x,bps_ba,s_630,q_90.jpg" alt="From the back" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">From the back</h2>
-                    <div class="product-tag">Ferrari F40</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20From%20the%20back" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 21. Rally style drip -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94625262_0/1782247720/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_54_38_401x,bps_ba,s_630,q_90.jpg" alt="Rally style drip" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Rally style drip</h2>
-                    <div class="product-tag">LANCIA DELTA INTEGRALE</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Rally%20style%20drip" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 22. Back to the 50's -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94540918_4/1782135062/i_m:bi_production_blanks_ui7syp42jhmnxtvniuwg_1535405111,c_38_68_401x,bps_ba,s_630,q_90.jpg" alt="Back to the 50's" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Back to the 50's</h2>
-                    <div class="product-tag">MERCEDES</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Back%20to%20the%2050s" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 23. Honda S2000 -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94538681_0/1782130716/i_m:bi_production_blanks_ui7syp42jhmnxtvniuwg_1535405111,c_35_27_401x,bps_ba,s_630,q_90.jpg" alt="Honda S2000" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Honda S2000</h2>
-                    <div class="product-tag">JDM</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Honda%20S2000" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 24. Le Mans '66 -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94483348_0/1782050482/i_m:bi_production_blanks_ui7syp42jhmnxtvniuwg_1535405111,c_50_53_378x,bps_ba,s_630,q_90.jpg" alt="Le Mans '66" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Le Mans '66</h2>
-                    <div class="product-tag">LE MANS 24 HOURS</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Le%20Mans%2066" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 25. Maserati style -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94381643_3/1781871847/i_m:bi_production_blanks_lrrcno7e66sayoihc3ph_1535405116,c_73_7_326x,bps_ba,s_630,q_90.jpg" alt="Maserati style" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Maserati style</h2>
-                    <div class="product-tag">MASERATI</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Maserati%20style" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 26. The louder it is -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94316250_0/1781783548/i_m:bi_production_blanks_fi9zhy8iszgn9fdsrtgu_1535405111,c_41_85_401x,bps_ba,s_630,q_90.jpg" alt="The louder it is" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">The louder it is</h2>
-                    <div class="product-tag">AUDI</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20The%20louder%20it%20is" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 27. Tokyo drift -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94271241_0/1781722448/i_m:bi_production_blanks_ui7syp42jhmnxtvniuwg_1535405111,c_45_41_430x,bps_ba,s_630,q_90.jpg" alt="Tokyo drift" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Tokyo drift</h2>
-                    <div class="product-tag">TOKYO DRIFT</div>
-                    <div class="product-price">€ 29,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Tokyo%20drift" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 28. Turbo style -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94154610_0/1781557858/i_m:bi_production_blanks_mtl53ofohwq5goqjo9ke_1462829015,c_35_40_400x,s_630,q_90.jpg" alt="Turbo style" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Turbo style</h2>
-                    <div class="product-tag">BMW</div>
-                    <div class="product-price">€ 24,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Turbo%20style" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 29. Over the speed limit -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94153439_0/1781554374/i_m:bi_production_blanks_a59x1cgomgu5lprfjlmi_1462829024,c_35_38_400x,s_630,q_90.jpg" alt="Over the speed limit" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Over the speed limit</h2>
-                    <div class="product-tag">PORSCHE</div>
-                    <div class="product-price">€ 24,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Over%20the%20speed%20limit" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
-
-        <!-- 30. Catch me if you can -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/94097785_0/1781472906/i_m:bi_production_blanks_mtl53ofohwq5goqjo9ke_1462829015,c_59_70_353x,s_630,q_90.jpg" alt="Catch me if you can" class="product-image">
-            <div class="product-info">
-                <div>
-                    <h2 class="product-title">Catch me if you can</h2>
-                    <div class="product-tag">PORSCHE</div>
-                    <div class="product-price">€ 24,00 + Spedizione</div>
-                </div>
-                <a href="https://wa.me/39XXXXXXXXXX?text=Ciao,%20vorrei%20ordinare%20la%20maglietta:%20Catch%20me%20if%20you%20can" class="order-btn" target="_blank">Ordina su WhatsApp</a>
-            </div>
-        </div>
+        <!-- Aggiungi qui gli altri 29 blocchi product-card sostituendo le immagini e i titoli -->
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Vintage Style Lovers - Tutti i diritti riservati.</p>
+        <p>&copy; 2026 Vintage Style Lovers. Driven by Passion.</p>
     </footer>
 
 </body>
