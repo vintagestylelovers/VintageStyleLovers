@@ -2,150 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Style Lovers | Automotive Apparel</title>
+    <title>Vintage Garage Apparel</title>
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --card-bg: #1a1a1a;
-            --text-color: #d1d1d1;
-            --accent-color: #e63946; /* Racing Red */
-            --gold-accent: #f4a261;
-        }
-
-        body {
-            font-family: 'Courier New', Courier, monospace; /* Stile Vintage/Typewriter */
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 2px solid var(--accent-color);
-            width: 100%;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: var(--gold-accent);
-            margin-top: 10px;
-        }
-
-        .info-section {
-            padding: 30px;
-            text-align: center;
-            max-width: 700px;
-            font-style: italic;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            width: 90%;
-            max-width: 1100px;
-            padding-bottom: 60px;
-        }
-
-        .product-card {
-            background-color: var(--card-bg);
-            border: 1px solid #333;
-            padding: 15px;
-            transition: 0.3s;
-        }
-
-        .product-card:hover {
-            border-color: var(--accent-color);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            filter: grayscale(20%);
-        }
-
-        .product-title {
-            font-size: 1.1rem;
-            margin: 15px 0 5px 0;
-            color: #fff;
-        }
-
-        .product-price {
-            color: var(--gold-accent);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .order-btn {
-            display: block;
-            background: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            padding: 10px;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .order-btn:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        footer {
-            padding: 40px;
-            color: #555;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
+        :root { --oil-black: #0a0a0a; --asphalt: #1a1a1a; --racing-red: #c1121f; --dusty-white: #e0e0e0; --aged-gold: #c89f50; }
+        body { background-color: var(--oil-black); color: var(--dusty-white); font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; }
+        header { text-align: center; border-bottom: 3px double var(--racing-red); padding: 40px 0; margin-bottom: 40px; }
+        h1 { font-size: 3rem; color: var(--dusty-white); text-transform: uppercase; letter-spacing: 8px; margin: 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .item { background-color: var(--asphalt); padding: 10px; border: 1px solid #333; text-align: center; }
+        .item img { width: 100%; height: 200px; object-fit: cover; filter: sepia(30%); }
+        .btn-order { display: block; border: 1px solid var(--racing-red); color: var(--racing-red); padding: 8px; margin-top: 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        .btn-order:hover { background: var(--racing-red); color: white; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>Vintage Style Lovers</h1>
-        <p>// Pure Automotive Passion & Heritage //</p>
-    </header>
-
-    <div class="info-section">
-        <p>Premium apparel for car enthusiasts. Hand-selected designs. 
-           Order directly via WhatsApp and pay via Bank Transfer (IBAN). 
-           Worldwide shipping available via Italian Post.</p>
+    <header><h1>VINTAGE GARAGE</h1></header>
+    <div class="grid">
+        <!-- Generazione statica dei 30 elementi -->
+        <script>
+            const designs = ["Vintage Engine", "Classic Racer", "Old School Garage", "Retro Speed", "Piston Power", "Turbo Heritage", "Midnight Drive", "Circuit Legend", "Road King", "Steel Soul", "Grand Prix 60s", "Drift Master", "Garage Life", "Muscle Car Club", "Vintage Tire", "Race Track", "Fuel Injection", "Chrome Dreams", "Speed Demon", "Classic Curves", "Rally Master", "Roadster Club", "Vintage Oil", "Engine Block", "Super Sport", "Apex Hunter", "Shift Gear", "Vintage Helmet", "Racing Stripes", "Full Throttle"];
+            
+            designs.forEach((name, i) => {
+                document.write(`
+                    <div class="item">
+                        <img src="https://picsum.photos/300/300?random=${i}" alt="Design">
+                        <h3>${name}</h3>
+                        <a href="https://wa.me/39XXXXXXXXXX?text=I%20want%20to%20order%20${name.replace(' ', '%20')}" class="btn-order">Order Now</a>
+                    </div>
+                `);
+            });
+        </script>
     </div>
-
-    <div class="container">
-        
-        <!-- Esempio Prodotto (Ripeti per tutti i 30 design) -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg" alt="Design" class="product-image">
-            <h2 class="product-title">Hand made with love</h2>
-            <div class="product-price">€ 29.00 + shipping</div>
-            <a href="https://wa.me/39XXXXXXXXXX?text=Hello,%20I%20would%20like%20to%20order%20the%20Hand%20made%20with%20love%20t-shirt." class="order-btn">Order on WhatsApp</a>
-        </div>
-
-        <!-- Aggiungi qui gli altri 29 blocchi product-card sostituendo le immagini e i titoli -->
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Vintage Style Lovers. Driven by Passion.</p>
-    </footer>
-
 </body>
 </html>
