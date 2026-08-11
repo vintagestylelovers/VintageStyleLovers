@@ -2,116 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vintage Garage Apparel | Automotive Heritage</title>
+    <title>Vintage Garage Apparel</title>
     <style>
-        :root {
-            --oil-black: #0a0a0a;
-            --asphalt: #1a1a1a;
-            --racing-red: #c1121f;
-            --dusty-white: #e0e0e0;
-            --aged-gold: #c89f50;
-        }
-
-        body {
-            background-color: var(--oil-black);
-            color: var(--dusty-white);
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            border-bottom: 3px double var(--racing-red);
-            padding: 40px 0;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: var(--dusty-white);
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            margin: 0;
-        }
-
-        .subtitle {
-            color: var(--aged-gold);
-            font-style: italic;
-            letter-spacing: 2px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .item {
-            background-color: var(--asphalt);
-            padding: 15px;
-            border: 1px solid #333;
-            text-align: center;
-        }
-
-        .item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            filter: sepia(30%) contrast(1.1);
-        }
-
-        .item h3 {
-            margin: 15px 0;
-            text-transform: uppercase;
-            font-size: 1rem;
-        }
-
-        .btn-order {
-            display: block;
-            border: 1px solid var(--racing-red);
-            color: var(--racing-red);
-            padding: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .btn-order:hover {
-            background: var(--racing-red);
-            color: white;
-        }
+        :root { --bg: #0f0f0f; --card: #1a1a1a; --red: #b91c1c; --white: #ececec; }
+        body { background-color: var(--bg); color: var(--white); font-family: 'Helvetica Neue', sans-serif; margin: 0; padding: 40px; }
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-size: 3rem; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px solid var(--red); display: inline-block; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        
+        .item { background: var(--card); padding: 20px; transition: transform 0.3s; text-align: center; border-radius: 4px; }
+        .item:hover { transform: translateY(-10px); }
+        
+        /* Qui ho sistemato il taglio: 'contain' mostra tutta l'immagine */
+        .item img { width: 100%; height: 300px; object-fit: contain; background: #000; margin-bottom: 15px; }
+        
+        .title { font-size: 1.1rem; margin: 10px 0; text-transform: uppercase; }
+        .btn { display: block; background: var(--red); color: white; padding: 12px; text-decoration: none; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
-
-    <header>
-        <h1>VINTAGE GARAGE</h1>
-        <p class="subtitle">// Authentic Automotive Apparel //</p>
-    </header>
-
-    <div class="grid">
-
-        <!-- Prodotto 1: Nissan Silvia S15 -->
-        <div class="item">
-            <img src="https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg" alt="Nissan style jdm">
-            <h3>Nissan Style JDM</h3>
-            <a href="https://wa.me/39XXXXXXXXXX?text=Hi!%20I%20would%20like%20to%20order%20the%20Nissan%20Style%20JDM%20design." class="btn-order">Order via WhatsApp</a>
-        </div>
-
-        <!-- Prodotto 2: Porsche 964 RWB -->
-        <div class="item">
-            <img src="https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg" alt="Cooler with a lifting">
-            <h3>Cooler with a lifting (RWB)</h3>
-            <a href="https://wa.me/39XXXXXXXXXX?text=Hi!%20I%20would%20like%20to%20order%20the%20Cooler%20with%20a%20lifting%20design." class="btn-order">Order via WhatsApp</a>
-        </div>
-
-        <!-- Continua a mandarmi i prossimi link e li aggiungo qui! -->
-
+    <header><h1>VINTAGE GARAGE</h1></header>
+    <div class="grid" id="productGrid">
+        <!-- Il codice inserisce qui i prodotti -->
     </div>
 
+    <script>
+        const products = [
+            { img: "https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg", name: "Nissan Style JDM" },
+            { img: "https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg", name: "Cooler RWB" }
+        ];
+
+        const grid = document.getElementById('productGrid');
+        products.forEach(p => {
+            grid.innerHTML += `
+                <div class="item">
+                    <img src="${p.img}" alt="${p.name}">
+                    <div class="title">${p.name}</div>
+                    <a href="https://wa.me/39XXXXXXXXXX?text=I%20want%20to%20order%20${p.name}" class="btn">Order via WhatsApp</a>
+                </div>
+            `;
+        });
+    </script>
 </body>
 </html>
