@@ -10,11 +10,10 @@
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #0a0a0a; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
         .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--accent); text-decoration: none; }
         .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; text-transform: uppercase; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--accent); }
         
         header { text-align: center; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center; }
         h1 { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; margin: 0; color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .subtitle { color: var(--gold); font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); margin-bottom: 10px; }
+        .subtitle { color: var(--gold); font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 10px; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
@@ -33,7 +32,6 @@
     <div class="nav-links">
         <a href="#">Home</a>
         <a href="https://www.tiktok.com/@vintagestylelovers" target="_blank">TikTok</a>
-        <a href="mailto:vintagestylelovers1104@gmail.com">Contact</a>
     </div>
 </nav>
 
@@ -70,19 +68,25 @@
                 <img src="${p.img}" alt="${p.name}">
                 <h3>${p.name}</h3>
                 <div class="price">€ 34.99</div>
-                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                    <input type="hidden" name="Product" value="${p.name}">
-                    <select name="Size" class="size-select" required>
-                        <option value="" disabled selected>Select Size</option>
-                        <option value="S">Size S</option><option value="M">Size M</option>
-                        <option value="L">Size L</option><option value="XL">Size XL</option>
-                    </select>
-                    <input type="email" name="CustomerEmail" placeholder="Your Email Address" required style="width:100%; padding:10px; margin-bottom:10px; box-sizing:border-box; background:#222; color:#fff; border:1px solid #444;">
-                    <button type="submit" class="btn-order">ORDER NOW</button>
-                </form>
+                <select id="size-${i}" class="size-select">
+                    <option value="" disabled selected>Select Size</option>
+                    <option value="S">Size S</option><option value="M">Size M</option>
+                    <option value="L">Size L</option><option value="XL">Size XL</option>
+                </select>
+                <button class="btn-order" onclick="sendEmail('${p.name}', ${i})">ORDER NOW</button>
             </div>
         `;
     });
+
+    function sendEmail(productName, index) {
+        const size = document.getElementById(`size-${index}`).value;
+        if (!size) { alert("Please select a size first!"); return; }
+        
+        const subject = encodeURIComponent("New Order: " + productName);
+        const body = encodeURIComponent("I would like to purchase:\n\nProduct: " + productName + "\nSize: " + size + "\n\nPlease send me the payment details.");
+        
+        window.location.href = "mailto:vintagestylelovers1104@gmail.com?subject=" + subject + "&body=" + body;
+    }
 </script>
 
 </body>
