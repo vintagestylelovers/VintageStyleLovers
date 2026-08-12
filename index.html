@@ -1,285 +1,150 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Style Lovers - Apparel for Oilheads</title>
+    <title>VINTAGE STYLE LOVERS | AUTHENTIC MOTORS</title>
     <style>
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --text-color: #ffffff;
-            --accent-color: #e50914;
-            --gray-text: #b3b3b3;
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;700&display=swap');
+        :root { --dark: #0a0a0a; --charcoal: #151515; --accent: #e63946; --gold: #d4af37; --text: #f1f1f1; --dim: #888; }
+        body { background-color: var(--dark); color: var(--text); font-family: 'Oswald', sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(10, 10, 10, 0.95); border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--accent); letter-spacing: 4px; text-decoration: none; text-transform: uppercase; }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 30px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        header { 
+            text-align: center; 
+            padding: 120px 20px; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=1950&q=80'); 
+            background-size: cover; 
+            background-position: center; 
         }
+        
+        h1 { font-family: 'Bebas Neue', sans-serif; font-size: 6rem; margin: 0; color: #fff; text-transform: uppercase; letter-spacing: 5px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
+        .subtitle { color: var(--gold); font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
+        
+        .card { background: var(--charcoal); border: 1px solid #222; padding: 20px; transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card img { width: 100%; height: 260px; object-fit: contain; background: #000; margin-bottom: 15px; transition: transform 0.5s; }
+        .card:hover img { transform: scale(1.03); }
+        .card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; margin: 0 0 10px 0; letter-spacing: 2px; }
+        
+        .price-tag { color: var(--accent); font-size: 1.3rem; font-weight: bold; margin-bottom: 10px; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
+        /* Stili Sezione Taglie e Checkout all'interno della card */
+        .order-section { margin-top: 10px; border-top: 1px solid #222; padding-top: 15px; }
+        .order-section label { display: block; font-size: 0.9rem; margin-bottom: 5px; color: var(--dim); text-transform: uppercase; }
+        
+        .size-select { width: 100%; padding: 8px; background: #222; color: #fff; border: 1px solid #444; margin-bottom: 10px; font-family: 'Oswald', sans-serif; font-size: 1rem; }
+        
+        .size-guide-toggle { font-size: 0.85srem; color: var(--gold); cursor: pointer; text-decoration: underline; margin-bottom: 10px; display: inline-block; }
+        
+        .size-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 0.85rem; background: #111; }
+        .size-table th, .size-table td { border: 1px solid #333; padding: 6px; text-align: center; }
+        .size-table th { background: #222; color: var(--accent); }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: rgba(0, 0, 0, 0.8);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        .checkout-box { background: #111; padding: 10px; margin-bottom: 15px; font-size: 0.9rem; border-left: 3px solid var(--accent); }
+        .checkout-total { font-weight: bold; color: var(--accent); font-size: 1.1rem; margin-top: 5px; }
+        
+        .poste-link { font-size: 0.75rem; color: var(--dim); margin-bottom: 15px; display: block; }
+        .poste-link a { color: #4da6ff; text-decoration: underline; }
 
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 600;
-        }
+        .iban-info { font-size: 0.8rem; background: #1a1a1a; padding: 8px; margin-bottom: 15px; border: 1px dashed #444; color: var(--dim); }
+        .iban-info strong { color: var(--text); }
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+        .btn-order { display: block; background: var(--accent); color: #fff; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border: none; width: 100%; cursor: pointer; }
+        .btn-order:hover { background: #fff; color: var(--accent); }
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        header p {
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin: 10px 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .product-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            margin-bottom: 40px;
-        }
-
-        .product-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        /* Sezione Taglie */
-        .sizes-section {
-            margin: 20px 0;
-        }
-
-        .sizes-section label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        select {
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #555;
-            border-radius: 4px;
-            width: 100%;
-            max-width: 200px;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .size-guide-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            background-color: #252525;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .size-guide-table th, .size-guide-table td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
-
-        .size-guide-table th {
-            background-color: #333;
-            color: var(--accent-color);
-        }
-
-        /* Checkout e Spedizione */
-        .checkout-box {
-            background-color: #252525;
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 20px;
-        }
-
-        .checkout-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .total-checkout {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--accent-color);
-            border-top: 2px solid #444;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-
-        .poste-link {
-            font-size: 0.9rem;
-            color: var(--gray-text);
-            margin-top: 10px;
-            display: block;
-        }
-
-        .poste-link a {
-            color: #4da6ff;
-            text-decoration: underline;
-        }
-
-        /* Pagamento IBAN */
-        .payment-info {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #1a1a1a;
-            border-left: 4px solid var(--accent-color);
-            font-size: 0.95rem;
-        }
-
-        .btn-order {
-            display: block;
-            width: 100%;
-            background-color: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
-
-        .btn-order:hover {
-            background-color: #c50710;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; padding: 60px; background: #050505; color: var(--dim); border-top: 1px solid #222; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <a href="#">VINTAGE STYLE LOVERS</a>
-        <div>
-            <a href="#">Home</a>
-            <a href="https://www.tiktok.com/@vintagestylelovers?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
-            <a href="mailto:info@vintagegarage.com">Contact</a>
-        </div>
-    </nav>
-
-    <header>
-        <p>Premium Apparel for Automotive Souls</p>
-        <h1>APPAREL FOR OILHEADS</h1>
-    </header>
-
-    <div class="container">
-        <div class="product-card">
-            <div class="product-title">T-Shirt Vintage Oilhead</div>
-            <div class="price">Prezzo base: € 34,99</div>
-
-            <!-- SELEZIONE TAGLIA -->
-            <div class="sizes-section">
-                <label for="sizeSelect">Seleziona la tua Taglia:</label>
-                <select id="sizeSelect">
-                    <option value="S">Taglia S</option>
-                    <option value="M">Taglia M</option>
-                    <option value="L" selected>Taglia L</option>
-                    <option value="XL">Taglia XL</option>
-                    <option value="XXL">Taglia XXL</option>
-                </select>
-
-                <!-- GUIDA ALLE TAGLIE (TUTTE) -->
-                <p style="font-weight: bold; margin-top: 15px;">Guida alle Taglie (Misure in cm):</p>
-                <table class="size-guide-table">
-                    <tr>
-                        <th>Taglia</th>
-                        <th>Larghezza (Petto)</th>
-                        <th>Lunghezza</th>
-                    </tr>
-                    <tr><td>S</td><td>48 cm</td><td>70 cm</td></tr>
-                    <tr><td>M</td><td>52 cm</td><td>72 cm</td></tr>
-                    <tr><td>L</td><td>56 cm</td><td>74 cm</td></tr>
-                    <tr><td>XL</td><td>60 cm</td><td>76 cm</td></tr>
-                    <tr><td>XXL</td><td>64 cm</td><td>78 cm</td></tr>
-                </table>
-            </div>
-
-            <!-- CHECKOUT & SPEDIZIONE -->
-            <div class="checkout-box">
-                <div class="checkout-row">
-                    <span>Prezzo Maglia:</span>
-                    <span>€ 34,99</span>
-                </div>
-                <div class="checkout-row">
-                    <span>Spedizione Standard:</span>
-                    <span>€ 7,00</span>
-                </div>
-                <div class="checkout-row total-checkout">
-                    <span>TOTAL CHECKOUT:</span>
-                    <span>€ 41,99</span>
-                </div>
-                <span class="poste-link">* Il costo della spedizione si basa su Poste Delivery Web. Puoi verificare eventuali variazioni sul <a href="https://postedeliveryweb-retail.poste.it/postedeliveryweb/retail" target="_blank">sito ufficiale di Poste Italiane</a>.</span>
-            </div>
-
-            <!-- PAGAMENTO IBAN -->
-            <div class="payment-info">
-                <p><strong>Modalità di Pagamento:</strong> Bonifico Bancario</p>
-                <p><strong>IBAN:</strong> IT00 X000 0000 0000 0000 0000 000</p>
-                <p style="font-size: 0.85rem; color: var(--gray-text);">Inserisci nella causale: "T-Shirt Vintage Style Lovers - Taglia [La tua taglia]" e invia la ricevuta via email.</p>
-            </div>
-
-            <button class="btn-order" onclick="alert('Per completare l\'ordine, effettua il bonifico all\'IBAN indicato e invia una mail con la ricevuta e la taglia scelta a info@vintagegarage.com')">Procedi con l'Ordine</button>
-        </div>
+<nav>
+    <a href="#" class="logo">Vintage Style Lovers</a>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="https://www.tiktok.com/@vintagestylelovers?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+        <a href="mailto:info@vintagestylelovers.com">Contact</a>
     </div>
+</nav>
+<header>
+    <p class="subtitle">Premium Apparel for Automotive Souls</p>
+    <h1>APPAREL FOR OILHEADS</h1>
+</header>
+<div class="container">
+    <div class="grid" id="productGrid"></div>
+</div>
 
-    <footer>© 2026 VINTAGE GARAGE - DRIVE LIKE A LEGEND</footer>
+<script>
+    const products = [
+        { img: "https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 01" },
+        { img: "https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg", name: "Garage Design 02" },
+        { img: "https://images.teepublic.com/derived/production/designs/95787958_0/1784020597/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_29_14_425x,bps_ba,s_630,q_90.jpg", name: "Garage Design 03" },
+        { img: "https://images.teepublic.com/derived/production/designs/95526543_0/1783602488/i_m:bi_production_blanks_t6kbx5vb9b1g3q6hwaii_1571669487,c_35_19_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 04" },
+        { img: "https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 05" },
+        { img: "https://images.teepublic.com/derived/production/designs/95481950_1/1783540823/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_0_0_472x,bps_ba,s_630,q_90.jpg", name: "Garage Design 06" },
+        { img: "https://images.teepublic.com/derived/production/designs/95350190_1/1783340269/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_51_20_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 07" },
+        { img: "https://images.teepublic.com/derived/production/designs/95256610_0/1783183202/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_41_39_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 08" },
+        { img: "https://images.teepublic.com/derived/production/designs/95196578_0/1783081057/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_35_23_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 09" },
+        { img: "https://images.teepublic.com/derived/production/designs/95141200_1/1783000884/i_m:bi_production_blanks_m0ljmwsjvj0dfsnpevcj_1571669489,c_64_14_349x,bps_ba,s_630,q_90.jpg", name: "Garage Design 10" },
+        { img: "https://images.teepublic.com/derived/production/designs/95004500_0/1782804880/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_54_12_354x,bps_ba,s_630,q_90.jpg", name: "Garage Design 11" },
+        { img: "https://images.teepublic.com/derived/production/designs/94963279_0/1782741854/i_m:bi_production_blanks_vwnpqbrk5brqfxmcqha0_1681922693,c_50_8_373x,bps_ba,s_630,q_90.jpg", name: "Garage Design 12" },
+        { img: "https://images.teepublic.com/derived/production/designs/94915897_0/1782677087/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_35_32_401x,bps_ba,s_630,q_90.jpg", name: "Garage Design 13" }
+    ];
 
+    const grid = document.getElementById('productGrid');
+    
+    products.forEach((p, index) => {
+        grid.innerHTML += `
+            <div class="card">
+                <div>
+                    <img src="${p.img}" alt="${p.name}">
+                    <h3>${p.name}</h3>
+                    <div class="price-tag">€ 34,99</div>
+                </div>
+                
+                <div class="order-section">
+                    <label for="size-${index}">Seleziona Taglia:</label>
+                    <select id="size-${index}" class="size-select">
+                        <option value="S">Taglia S</option>
+                        <option value="M">Taglia M</option>
+                        <option value="L" selected>Taglia L</option>
+                        <option value="XL">Taglia XL</option>
+                        <option value="XXL">Taglia XXL</option>
+                    </select>
+
+                    <details style="margin-bottom: 10px;">
+                        <summary class="size-guide-toggle">Guida alle Taglie (Tutte)</summary>
+                        <table class="size-table">
+                            <tr><th>Taglia</th><th>Petto</th><th>Lunghezza</th></tr>
+                            <tr><td>S</td><td>48cm</td><td>70cm</td></tr>
+                            <tr><td>M</td><td>52cm</td><td>72cm</td></tr>
+                            <tr><td>L</td><td>56cm</td><td>74cm</td></tr>
+                            <tr><td>XL</td><td>60cm</td><td>76cm</td></tr>
+                            <tr><td>XXL</td><td>64cm</td><td>78cm</td></tr>
+                        </table>
+                    </details>
+
+                    <div class="checkout-box">
+                        <div>Prezzo: € 34,99 + Spedizione (€ 7,00)</div>
+                        <div class="checkout-total">TOTAL CHECKOUT: € 41,99</div>
+                    </div>
+                    
+                    <span class="poste-link">Verifica tariffe esatte su <a href="https://postedeliveryweb-retail.poste.it/postedeliveryweb/retail" target="_blank">Poste Delivery Web</a></span>
+
+                    <div class="iban-info">
+                        <strong>Pagamento IBAN:</strong> IT00 X000 0000 0000 0000 0000 000<br>
+                        Causale: ${p.name} - [Tua Taglia]
+                    </div>
+
+                    <button class="btn-order" onclick="alert('Per completare l\'ordine di ${p.name}, effettua il bonifico all\'IBAN indicato e manda una mail con la ricevuta e la taglia a info@vintagestylelovers.com')">Procedi con l'Ordine</button>
+                </div>
+            </div>
+        `;
+    });
+</script>
+<footer>&copy; 2026 Vintage Style Lovers - DRIVE LIKE A LEGEND</footer>
 </body>
 </html>
