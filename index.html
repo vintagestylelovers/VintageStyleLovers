@@ -64,9 +64,12 @@
 <div id="orderModal" class="modal">
     <div class="modal-content">
         <h2 style="color:var(--accent); font-family:'Bebas Neue'; font-size:2rem; margin-top:0;">ORDER SUMMARY</h2>
-        <p style="font-size:0.95rem; color:#ccc;">Copy the text below and send it to our email to complete your purchase:</p>
+        <p style="font-size:0.95rem; color:#ccc;">
+            Copy the text below and send it to our email address:<br>
+            <strong style="color:var(--gold); font-size:1.1rem;">vintagestylelovers1104@gmail.com</strong>
+        </p>
         <textarea id="orderText" style="width:100%; height:110px; background:#000; color:#fff; padding:10px; border:1px solid #444; box-sizing:border-box; font-family:monospace;" readonly></textarea>
-        <button class="modal-btn" onclick="copyAndEmail()">COPY & EMAIL US</button>
+        <button class="modal-btn" onclick="copyAndEmail()">COPY & OPEN EMAIL</button>
         <button onclick="document.getElementById('orderModal').style.display='none'" style="background:transparent; border:none; color:#888; display:block; margin:15px auto 0 auto; cursor:pointer; text-transform:uppercase; font-size:0.85rem;">Close</button>
     </div>
 </div>
@@ -130,12 +133,10 @@
     function copyAndEmail() {
         const copyText = document.getElementById("orderText");
         
-        // Copia negli appunti in modo sicuro
         navigator.clipboard.writeText(copyText.value).then(() => {
             alert("Order details copied to clipboard!");
             window.location.href = "mailto:vintagestylelovers1104@gmail.com?subject=New Order Request&body=" + encodeURIComponent(copyText.value);
         }).catch(err => {
-            // Fallback se il browser blocca la copia automatica
             copyText.select();
             document.execCommand("copy");
             alert("Order details copied!");
