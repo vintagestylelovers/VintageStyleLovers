@@ -1,149 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>VINTAGE STYLE LOVERS | AUTHENTIC MOTORS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Style Lovers | Garage Collection</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;700&display=swap');
-        :root { --dark: #0a0a0a; --charcoal: #151515; --accent: #e63946; --gold: #d4af37; --text: #f1f1f1; }
-        body { background-color: var(--dark); color: var(--text); font-family: 'Oswald', sans-serif; margin: 0; padding: 0; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #0a0a0a; border-bottom: 2px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--accent); text-decoration: none; }
-        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; text-transform: uppercase; font-size: 0.9rem; }
-        .nav-links a:hover { color: var(--accent); }
-        
-        header { 
-            text-align: center; 
-            padding: 120px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://www.topgear.com/sites/default/files/2022/02/TopGear%20-%20Kalmar%20%20-%20RS-R%20-%20121.jpg?w=976&h=549'); 
-            background-size: cover; 
-            background-position: center; 
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f9f7f2; 
+            margin: 0; 
+            padding: 0; 
+            color: #333;
         }
-        h1 { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; margin: 0; color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
-        .subtitle { color: var(--gold); font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); margin-bottom: 10px; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: var(--charcoal); padding: 20px; border: 1px solid #222; display: flex; flex-direction: column; justify-content: space-between; }
-        .card img { width: 100%; height: 250px; object-fit: contain; background: #000; margin-bottom: 10px; }
-        .card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; margin: 0 0 5px 0; }
-        .price { color: var(--gold); font-size: 1.4rem; font-weight: bold; margin: 10px 0; }
-        .size-select { width: 100%; padding: 10px; background: #222; color: #fff; border: 1px solid #444; margin-bottom: 15px; font-family: 'Oswald', sans-serif; }
-        .btn-order { width: 100%; padding: 12px; background: var(--accent); color: white; border: none; cursor: pointer; font-weight: bold; text-transform: uppercase; }
-        .btn-order:hover { background: #fff; color: var(--accent); }
-
-        /* Modal Style */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; }
-        .modal-content { background: #151515; padding: 30px; border: 2px solid var(--accent); max-width: 500px; width: 90%; text-align: center; }
-        .modal-btn { background: var(--accent); color: white; padding: 12px 20px; border: none; cursor: pointer; margin-top: 20px; width: 100%; font-weight: bold; text-transform: uppercase; }
-        .modal-btn:hover { background: #fff; color: var(--accent); }
-        
-        footer { text-align: center; padding: 40px; background: #050505; color: #777; border-top: 1px solid #222; margin-top: 60px; font-size: 0.9rem; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        header { text-align: center; padding: 50px 0; }
+        h1 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 30px; 
+            padding-top: 20px;
+        }
+        .product-card { 
+            background: #ffffff; 
+            padding: 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-card img { 
+            max-width: 100%; 
+            height: 300px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+        }
+        .product-card h3 { font-size: 1.25rem; margin: 10px 0; }
+        .buy-btn { 
+            display: block; 
+            width: 100%;
+            padding: 12px; 
+            background-color: #d35400; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            margin-top: 15px;
+            text-align: center;
+        }
+        .buy-btn:hover { background-color: #e67e22; }
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #7f8c8d; }
     </style>
 </head>
 <body>
-
-<nav>
-    <a href="#" class="logo">VINTAGE STYLE LOVERS</a>
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="https://www.tiktok.com/@vintagestylelovers" target="_blank">TikTok</a>
-    </div>
-</nav>
-
-<header>
-    <p class="subtitle">Premium Apparel for Automotive Souls</p>
-    <h1>APPAREL FOR OILHEADS</h1>
-</header>
-
-<div class="container">
-    <div class="grid" id="productGrid"></div>
-</div>
-
-<!-- Order Modal Box -->
-<div id="orderModal" class="modal">
-    <div class="modal-content">
-        <h2 style="color:var(--accent); font-family:'Bebas Neue'; font-size:2rem; margin-top:0;">ORDER SUMMARY</h2>
-        <p style="font-size:0.95rem; color:#ccc;">
-            Copy the text below and send it to our email address:<br>
-            <strong style="color:var(--gold); font-size:1.1rem;">vintagestylelovers1104@gmail.com</strong>
-        </p>
-        <textarea id="orderText" style="width:100%; height:110px; background:#000; color:#fff; padding:10px; border:1px solid #444; box-sizing:border-box; font-family:monospace;" readonly></textarea>
-        <button class="modal-btn" onclick="copyAndEmail()">COPY & OPEN EMAIL</button>
-        <button onclick="document.getElementById('orderModal').style.display='none'" style="background:transparent; border:none; color:#888; display:block; margin:15px auto 0 auto; cursor:pointer; text-transform:uppercase; font-size:0.85rem;">Close</button>
-    </div>
-</div>
-
-<footer>&copy; 2026 Vintage Style Lovers - All Rights Reserved</footer>
-
-<script>
-    const products = [
-        {name: "Garage Design 01", img: "https://images.teepublic.com/derived/production/designs/95594057_0/1783699091/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_38_23_401x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 02", img: "https://images.teepublic.com/derived/production/designs/94808190_0/1782484356/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_47_20_378x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 03", img: "https://images.teepublic.com/derived/production/designs/95787958_0/1784020597/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_29_14_425x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 04", img: "https://images.teepublic.com/derived/production/designs/95526543_0/1783602488/i_m:bi_production_blanks_t6kbx5vb9b1g3q6hwaii_1571669487,c_35_19_401x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 05", img: "https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 06", img: "https://images.teepublic.com/derived/production/designs/95481950_1/1783540823/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_0_0_472x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 07", img: "https://images.teepublic.com/derived/production/designs/95350190_1/1783340269/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_51_20_401x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 08", img: "https://images.teepublic.com/derived/production/designs/95256610_0/1783183202/i_m:bi_production_blanks_rpopxchk3mdhnbl4rwqm_1571669490,c_41_39_401x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 09", img: "https://images.teepublic.com/derived/production/designs/95196578_0/1783081057/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_35_23_401x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 10", img: "https://images.teepublic.com/derived/production/designs/95141200_1/1783000884/i_m:bi_production_blanks_m0ljmwsjvj0dfsnpevcj_1571669489,c_64_14_349x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 11", img: "https://images.teepublic.com/derived/production/designs/95004500_0/1782804880/i_m:bi_production_blanks_bi1yebj8fvsrvlznotju_1535405118,c_54_12_354x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 12", img: "https://images.teepublic.com/derived/production/designs/94963279_0/1782741854/i_m:bi_production_blanks_vwnpqbrk5brqfxmcqha0_1681922693,c_50_8_373x,bps_ba,s_630,q_90.jpg"},
-        {name: "Garage Design 13", img: "https://images.teepublic.com/derived/production/designs/94915897_0/1782677087/i_m:bi_production_blanks_ohytud26igyt2otynpup_1535405115,c_35_32_401x,bps_ba,s_630,q_90.jpg"}
-    ];
-
-    const grid = document.getElementById('productGrid');
-    products.forEach((p, i) => {
-        grid.innerHTML += `
-            <div class="card">
-                <div>
-                    <img src="${p.img}" alt="${p.name}">
-                    <h3>${p.name}</h3>
-                    <div class="price">€ 34.99</div>
-                </div>
-                <div>
-                    <select id="size-${i}" class="size-select">
-                        <option value="" disabled selected>Select Size</option>
-                        <option value="S">Size S</option>
-                        <option value="M">Size M</option>
-                        <option value="L">Size L</option>
-                        <option value="XL">Size XL</option>
-                    </select>
-                    <button class="btn-order" onclick="openOrderModal('${p.name}', ${i})">ORDER NOW</button>
-                </div>
+    <div class="container">
+        <header>
+            <h1>Vintage Style Lovers</h1>
+            <p>Esplora la nostra collezione Garage</p>
+        </header>
+        
+        <div class="grid">
+            <!-- Garage Design 1 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300?text=Immagine+Design+1" alt="Garage Design 1">
+                <h3>Garage Design 1</h3>
+                <a href="https://www.teepublic.com/..." class="buy-btn" target="_blank">Acquista su TeePublic</a>
             </div>
-        `;
-    });
 
-    function openOrderModal(productName, i) {
-        const sizeSelect = document.getElementById(`size-${i}`);
-        const size = sizeSelect.value;
-        if (!size) { 
-            alert("Please select a size first!"); 
-            sizeSelect.focus();
-            return; 
-        }
-        
-        const text = `Hi, I would like to order:\nProduct: ${productName}\nSize: ${size}\nPrice: € 34.99\n\nPlease send me the payment details.`;
-        document.getElementById('orderText').value = text;
-        document.getElementById('orderModal').style.display = 'flex';
-    }
+            <!-- Garage Design 2 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300?text=Immagine+Design+2" alt="Garage Design 2">
+                <h3>Garage Design 2</h3>
+                <a href="https://www.teepublic.com/..." class="buy-btn" target="_blank">Acquista su TeePublic</a>
+            </div>
 
-    function copyAndEmail() {
-        const copyText = document.getElementById("orderText");
-        
-        navigator.clipboard.writeText(copyText.value).then(() => {
-            alert("Order details copied to clipboard!");
-            window.location.href = "mailto:vintagestylelovers1104@gmail.com?subject=New Order Request&body=" + encodeURIComponent(copyText.value);
-        }).catch(err => {
-            copyText.select();
-            document.execCommand("copy");
-            alert("Order details copied!");
-            window.location.href = "mailto:vintagestylelovers1104@gmail.com?subject=New Order Request&body=" + encodeURIComponent(copyText.value);
-        });
-    }
-</script>
+            <!-- Garage Design 3 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300?text=Immagine+Design+3" alt="Garage Design 3">
+                <h3>Garage Design 3</h3>
+                <a href="WIDTH_OR_LINK_TEEPUBLIC_3" class="buy-btn" target="_blank">Acquista su TeePublic</a>
+            </div>
 
+            <!-- Garage Design 4 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300?text=Immagine+Design+4" alt="Garage Design 4">
+                <h3>Garage Design 4</h3>
+                <a href="https://www.teepublic.com/..." class="buy-btn" target="_blank">Acquista su TeePublic</a>
+            </div>
+
+            <!-- Garage Design 5 -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300x300?text=Immagine+Design+5" alt="Garage Design 5">
+                <h3>Garage Design 5</h3>
+                <a href="https://www.teepublic.com/..." class="buy-btn" target="_blank">Acquista su TeePublic</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Vintage Style Lovers. Tutti i diritti riservati.</p>
+    </footer>
 </body>
 </html>
