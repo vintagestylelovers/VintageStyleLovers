@@ -1,68 +1,76 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Style Lovers | Garage Style</title>
+    <title>Vintage Style Lovers | Garage Collection</title>
     <style>
         :root {
-            --nero: #000000;
-            --giallo: #FFD700;
-            --arancione: #FF4500;
+            --black: #000000;
+            --yellow: #FFD700;
+            --orange: #FF4500;
+            /* CAMBIA IL LINK QUI SOTTO PER SOSTITUIRE LA PORSCHE */
+            --hero-bg: url('https://images.unsplash.com/photo-1503376780353-7e1197940173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
         }
-        body { font-family: 'Impact', sans-serif; background-color: var(--nero); color: white; margin: 0; padding: 0; }
         
-        /* Hero Section (Sfondo auto) */
+        body { font-family: 'Impact', sans-serif; background-color: var(--black); color: white; margin: 0; padding: 0; }
+        
+        /* Hero Section (Porsche Background) */
         .hero { 
-            height: 400px; 
-            background: url('URL_TUA_IMMAGINE_AUTO_SFONDO') center/cover; 
+            height: 500px; 
+            background: var(--hero-bg) center/cover no-repeat; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             text-align: center;
-            border-bottom: 5px solid var(--arancione);
+            border-bottom: 8px solid var(--orange);
         }
-        .hero h1 { font-size: 4rem; color: var(--giallo); text-shadow: 2px 2px #000; background: rgba(0,0,0,0.5); padding: 20px; }
+        .hero-content { background: rgba(0,0,0,0.6); padding: 30px; border: 3px solid var(--yellow); }
+        .hero h1 { font-size: 5rem; color: var(--yellow); margin: 0; text-transform: uppercase; }
+        .hero p { font-size: 1.5rem; color: white; letter-spacing: 2px; }
 
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
         
-        .card { background: #1a1a1a; padding: 20px; border: 2px solid var(--giallo); border-radius: 5px; text-align: center; }
-        .card img { width: 100%; border-bottom: 2px solid var(--arancione); margin-bottom: 15px; }
-        .card h3 { color: var(--giallo); }
+        .card { background: #1a1a1a; padding: 20px; border: 2px solid var(--yellow); border-radius: 10px; text-align: center; }
+        .card img { width: 100%; height: 300px; object-fit: cover; border-bottom: 3px solid var(--orange); margin-bottom: 15px; }
+        .card h3 { color: var(--yellow); font-size: 1.8rem; margin: 10px 0; }
         
         .btn { 
-            display: block; padding: 15px; background-color: var(--arancione); 
-            color: black; text-decoration: none; font-weight: bold; border-radius: 3px; 
-            text-transform: uppercase; margin-top: 10px;
+            display: block; padding: 15px; background-color: var(--orange); 
+            color: black; text-decoration: none; font-weight: bold; border-radius: 5px; 
+            text-transform: uppercase; margin-top: 15px; font-size: 1.2rem;
         }
-        .btn:hover { background-color: var(--giallo); }
+        .btn:hover { background-color: var(--yellow); cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>VINTAGE STYLE LOVERS</h1>
-    </div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>VINTAGE STYLE LOVERS</h1>
+            <p>CLASSIC CARS & TIMELESS DESIGNS</p>
+        </div>
+    </header>
 
     <div class="container">
         <div class="grid">
+            
             <!-- Garage Design 1 -->
             <div class="card">
-                <img src="URL_TUA_IMMAGINE_1" alt="Garage Design 1">
+                <img src="URL_IMAGE_1" alt="Garage Design 1">
                 <h3>GARAGE DESIGN 1</h3>
-                <a href="URL_TEEPUBLIC_1" class="btn" target="_blank">ACQUISTA ORA</a>
+                <a href="URL_TEEPUBLIC_1" class="btn" target="_blank">BUY ON TEEPUBLIC</a>
             </div>
 
             <!-- Garage Design 2 -->
             <div class="card">
-                <img src="URL_TUA_IMMAGINE_2" alt="Garage Design 2">
+                <img src="URL_IMAGE_2" alt="Garage Design 2">
                 <h3>GARAGE DESIGN 2</h3>
-                <a href="URL_TEEPUBLIC_2" class="btn" target="_blank">ACQUISTA ORA</a>
+                <a href="URL_TEEPUBLIC_2" class="btn" target="_blank">BUY ON TEEPUBLIC</a>
             </div>
-            
-            <!-- Puoi aggiungere altri design qui copiando il blocco <div class="card">...</div> -->
+
         </div>
     </div>
 
