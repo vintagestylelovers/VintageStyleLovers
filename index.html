@@ -3,57 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Style Lovers | Garage Collection</title>
+    <title>Vintage Style Lovers | Garage Style</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: auto; }
-        header { text-align: center; padding: 40px 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .product-card { background: white; padding: 15px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: auto; border-radius: 4px; }
-        .product-card h3 { margin: 15px 0; font-size: 1.2em; }
-        .btn { display: block; padding: 10px; background-color: #000; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; }
-        .btn:hover { background-color: #333; }
+        :root {
+            --nero: #000000;
+            --giallo: #FFD700;
+            --arancione: #FF4500;
+        }
+        body { font-family: 'Impact', sans-serif; background-color: var(--nero); color: white; margin: 0; padding: 0; }
+        
+        /* Hero Section (Sfondo auto) */
+        .hero { 
+            height: 400px; 
+            background: url('URL_TUA_IMMAGINE_AUTO_SFONDO') center/cover; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            border-bottom: 5px solid var(--arancione);
+        }
+        .hero h1 { font-size: 4rem; color: var(--giallo); text-shadow: 2px 2px #000; background: rgba(0,0,0,0.5); padding: 20px; }
+
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+        
+        .card { background: #1a1a1a; padding: 20px; border: 2px solid var(--giallo); border-radius: 5px; text-align: center; }
+        .card img { width: 100%; border-bottom: 2px solid var(--arancione); margin-bottom: 15px; }
+        .card h3 { color: var(--giallo); }
+        
+        .btn { 
+            display: block; padding: 15px; background-color: var(--arancione); 
+            color: black; text-decoration: none; font-weight: bold; border-radius: 3px; 
+            text-transform: uppercase; margin-top: 10px;
+        }
+        .btn:hover { background-color: var(--giallo); }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Vintage Style Lovers</h1>
-        <p>Garage Collection</p>
-    </header>
+    <div class="hero">
+        <h1>VINTAGE STYLE LOVERS</h1>
+    </div>
 
-    <div class="grid">
-        <!-- Garage Design 1 -->
-        <div class="product-card">
-            <img src="https://images.teepublic.com/derived/production/designs/95786392_0/1784019276/i_m:bi_production_blanks_wbgkjvhmjc1emvm9yerh_1535405114,c_41_19_401x,bps_ba,s_630,q_90.jpg" alt="Garage Design 1">
-            <h3>Garage Design 1</h3>
-            <a href="https://www.teepublic.com/t-shirt/95786392-hand-made-with-love?store_id=4505692" class="btn" target="_blank">Acquista su TeePublic</a>
-        </div>
+    <div class="container">
+        <div class="grid">
+            <!-- Garage Design 1 -->
+            <div class="card">
+                <img src="URL_TUA_IMMAGINE_1" alt="Garage Design 1">
+                <h3>GARAGE DESIGN 1</h3>
+                <a href="URL_TEEPUBLIC_1" class="btn" target="_blank">ACQUISTA ORA</a>
+            </div>
 
-        <!-- Garage Design 2 -->
-        <div class="product-card">
-            <img src="URL_TUA_IMMAGINE_2" alt="Garage Design 2">
-            <h3>Garage Design 2</h3>
-            <a href="URL_TEEPUBLIC_DESIGN_2" class="btn" target="_blank">Acquista su TeePublic</a>
-        </div>
-
-        <!-- Garage Design 3 -->
-        <div class="product-card">
-            <img src="URL_TUA_IMMAGINE_3" alt="Garage Design 3">
-            <h3>Garage Design 3</h3>
-            <a href="URL_TEEPUBLIC_DESIGN_3" class="btn" target="_blank">Acquista su TeePublic</a>
-        </div>
-        
-        <!-- Garage Design 4 -->
-        <div class="product-card">
-            <img src="URL_TUA_IMMAGINE_4" alt="Garage Design 4">
-            <h3>Garage Design 4</h3>
-            <a href="URL_TEEPUBLIC_DESIGN_4" class="btn" target="_blank">Acquista su TeePublic</a>
+            <!-- Garage Design 2 -->
+            <div class="card">
+                <img src="URL_TUA_IMMAGINE_2" alt="Garage Design 2">
+                <h3>GARAGE DESIGN 2</h3>
+                <a href="URL_TEEPUBLIC_2" class="btn" target="_blank">ACQUISTA ORA</a>
+            </div>
+            
+            <!-- Puoi aggiungere altri design qui copiando il blocco <div class="card">...</div> -->
         </div>
     </div>
-</div>
 
 </body>
 </html>
