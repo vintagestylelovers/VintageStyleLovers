@@ -31,21 +31,23 @@
             justify-content: center; 
             text-align: center;
             border-bottom: 8px solid var(--orange);
-            position: relative; /* Fondamentale per posizionare l'icona in alto a destra */
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         /* Stile per il pulsante TikTok in alto a destra */
         .social-top-right {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             background: rgba(0, 0, 0, 0.8);
             border: 2px solid var(--yellow);
             color: var(--yellow);
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -61,8 +63,9 @@
 
         .hero-content { 
             background: rgba(0,0,0,0.6); 
-            padding: 30px; 
+            padding: 20px; 
             border: 3px solid var(--yellow); 
+            max-width: 90%;
         }
         
         .hero h1 { 
@@ -70,12 +73,14 @@
             color: var(--yellow); 
             margin: 0; 
             text-transform: uppercase; 
+            line-height: 1;
         }
         
         .hero p { 
             font-size: 1.5rem; 
             color: white; 
             letter-spacing: 2px; 
+            margin: 10px 0 0 0;
         }
 
         .container { 
@@ -129,6 +134,31 @@
             background-color: var(--yellow); 
             cursor: pointer; 
         }
+
+        /* --- CORREZIONE PER SMARTPHONE --- */
+        @media (max-width: 768px) {
+            .hero {
+                height: 450px;
+                /* Spazio extra in alto per evitare che il pulsante copra il testo */
+                padding-top: 60px; 
+            }
+
+            .social-top-right {
+                top: 10px;
+                right: 10px;
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem; /* Riduce la dimensione del titolo per farlo entrare negli schermi piccoli */
+            }
+
+            .hero p {
+                font-size: 1.1rem; /* Riduce il sottotitolo proporzionalmente */
+                letter-spacing: 1px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -147,7 +177,6 @@
 
     <div class="container">
         <div class="grid">
-
             <!-- Garage Design 01 -->
             <div class="card">
                 <img src="https://images.teepublic.com/derived/production/designs/97533668_0/1786983963/i_m:bi_production_blanks_devaxsoy1vvxfmth62ch_1535405117,c_47_6_378x,bps_ba,s_630,q_90.jpg" alt="Garage Design 1">
@@ -269,12 +298,10 @@
 
              <!-- Garage Design 18 -->
             <div class="card">
-                <img src="https://images.teepublic.com/derived/production/designs/97773799_0/1787465095/i_m:bi_production_blanks_devaxsoy1vvxfmth62ch_1535405117,c_80_6_312x,bps_ba,s_630,q_90.jpg" alt="Garage Design 17">
+                <img src="https://images.teepublic.com/derived/production/designs/97773799_0/1787465095/i_m:bi_production_blanks_devaxsoy1vvxfmth62ch_1535405117,c_80_6_312x,bps_ba,s_630,q_90.jpg" alt="Garage Design 18">
                 <h3>GARAGE DESIGN 18</h3>
                 <a href="https://www.teepublic.com/t-shirt/97773799-alfa-romeo-giulietta-spider" class="btn" target="_blank">BUY ON TEEPUBLIC</a>
             </div>
-
-
         </div>
     </div>
 
