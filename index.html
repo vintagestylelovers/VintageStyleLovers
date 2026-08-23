@@ -42,6 +42,40 @@
             color: black; text-decoration: none; font-weight: bold; border-radius: 5px; 
             text-transform: uppercase; margin-top: 15px; font-size: 1.2rem;
         }
+        }
+        
+        body { font-family: 'Impact', sans-serif; background-color: var(--black); color: white; margin: 0; padding: 0; }
+        
+        /* Hero Section (Porsche Background) */
+        .hero { 
+            height: 500px; 
+            background: var(--hero-bg) center/cover no-repeat; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
+            border-bottom: 8px solid var(--orange);
+            position: relative; /* Necessario per posizionare l'icona in modo assoluto */
+        }
+
+        /* Stile per il link/pulsante TikTok in alto a destra */
+        .social-top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--yellow);
+            color: var(--yellow);
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
         .btn:hover { background-color: var(--yellow); cursor: pointer; }
     </style>
 </head>
