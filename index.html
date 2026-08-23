@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vintage Style Lovers | Garage Collection</title>
+    <!-- Libreria FontAwesome per l'icona di TikTok -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --black: #000000;
             --yellow: #FFD700;
             --orange: #FF4500;
-            /* CAMBIA IL LINK QUI SOTTO PER SOSTITUIRE LA PORSCHE */
             --hero-bg: url('https://cdn.elferspot.com/wp-content/uploads/2026/06/30/differs-22-juni-171.jpg?class=xl');
         }
         
-        body { font-family: 'Impact', sans-serif; background-color: var(--black); color: white; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Impact', sans-serif; 
+            background-color: var(--black); 
+            color: white; 
+            margin: 0; 
+            padding: 0; 
+        }
         
         /* Hero Section (Porsche Background) */
         .hero { 
@@ -24,41 +31,10 @@
             justify-content: center; 
             text-align: center;
             border-bottom: 8px solid var(--orange);
-        }
-        .hero-content { background: rgba(0,0,0,0.6); padding: 30px; border: 3px solid var(--yellow); }
-        .hero h1 { font-size: 5rem; color: var(--yellow); margin: 0; text-transform: uppercase; }
-        .hero p { font-size: 1.5rem; color: white; letter-spacing: 2px; }
-
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
-        
-        .card { background: #1a1a1a; padding: 20px; border: 2px solid var(--yellow); border-radius: 10px; text-align: center; }
-        .card img { width: 100%; height: 300px; object-fit: cover; border-bottom: 3px solid var(--orange); margin-bottom: 15px; }
-        .card h3 { color: var(--yellow); font-size: 1.8rem; margin: 10px 0; }
-        
-        .btn { 
-            display: block; padding: 15px; background-color: var(--orange); 
-            color: black; text-decoration: none; font-weight: bold; border-radius: 5px; 
-            text-transform: uppercase; margin-top: 15px; font-size: 1.2rem;
-        }
-        }
-        
-        body { font-family: 'Impact', sans-serif; background-color: var(--black); color: white; margin: 0; padding: 0; }
-        
-        /* Hero Section (Porsche Background) */
-        .hero { 
-            height: 500px; 
-            background: var(--hero-bg) center/cover no-repeat; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center;
-            border-bottom: 8px solid var(--orange);
-            position: relative; /* Necessario per posizionare l'icona in modo assoluto */
+            position: relative; /* Fondamentale per posizionare l'icona in alto a destra */
         }
 
-        /* Stile per il link/pulsante TikTok in alto a destra */
+        /* Stile per il pulsante TikTok in alto a destra */
         .social-top-right {
             position: absolute;
             top: 20px;
@@ -76,20 +52,98 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        .btn:hover { background-color: var(--yellow); cursor: pointer; }
+
+        .social-top-right:hover {
+            background-color: var(--orange);
+            color: var(--black);
+            border-color: var(--orange);
+        }
+
+        .hero-content { 
+            background: rgba(0,0,0,0.6); 
+            padding: 30px; 
+            border: 3px solid var(--yellow); 
+        }
+        
+        .hero h1 { 
+            font-size: 5rem; 
+            color: var(--yellow); 
+            margin: 0; 
+            text-transform: uppercase; 
+        }
+        
+        .hero p { 
+            font-size: 1.5rem; 
+            color: white; 
+            letter-spacing: 2px; 
+        }
+
+        .container { 
+            max-width: 1000px; 
+            margin: auto; 
+            padding: 40px 20px; 
+        }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 40px; 
+        }
+        
+        .card { 
+            background: #1a1a1a; 
+            padding: 20px; 
+            border: 2px solid var(--yellow); 
+            border-radius: 10px; 
+            text-align: center; 
+        }
+        
+        .card img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: cover; 
+            border-bottom: 3px solid var(--orange); 
+            margin-bottom: 15px; 
+        }
+        
+        .card h3 { 
+            color: var(--yellow); 
+            font-size: 1.8rem; 
+            margin: 10px 0; 
+        }
+        
+        .btn { 
+            display: block; 
+            padding: 15px; 
+            background-color: var(--orange); 
+            color: black; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 5px; 
+            text-transform: uppercase; 
+            margin-top: 15px; 
+            font-size: 1.2rem;
+        }
+        
+        .btn:hover { 
+            background-color: var(--yellow); 
+            cursor: pointer; 
+        }
     </style>
 </head>
 <body>
 
     <header class="hero">
+        <!-- Pulsante TikTok posizionato in alto a destra -->
+        <a href="https://www.tiktok.com/@vintagestylelovers?is_from_webapp=1&sender_device=pc" class="social-top-right" target="_blank">
+            <i class="fa-brands fa-tiktok"></i> TikTok
+        </a>
+
         <div class="hero-content">
             <h1>VINTAGE STYLE LOVERS</h1>
             <p>CLASSIC CARS & TIMELESS DESIGNS</p>
         </div>
     </header>
-
-    <div class="container">
-        <div class="grid">
 
              <!-- Garage Design 01 -->
             <div class="card">
